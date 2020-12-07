@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
@@ -48,6 +49,7 @@ namespace handle_sigterm_smaple
         private void OnStarted()
         {
             logger.LogInformation("OnStarted method called.");
+            logger.LogInformation($"Process id: {Process.GetCurrentProcess().Id}");
             string filePath = GetHomePath() + @"/sigterm-handler-started.txt";
             string[] lines = {"Process started."};
             
