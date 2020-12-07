@@ -59,16 +59,16 @@ namespace handle_sigterm_smaple
         private void OnStopping()  
         {  
             logger.LogInformation("OnStopping method called.");
-        }  
-  
-        private void OnStopped()  
-        {  
-            logger.LogInformation("OnStopped method called.");  
             string filePath = GetHomePath() + @"/sigterm-handler-stopped.txt";
             string[] lines = {"Process stopped."};
             
             System.IO.File.WriteAllLines(filePath,lines);
-            logger.LogInformation($"File '{filePath}' created."); 
+            logger.LogInformation($"File '{filePath}' created.");
+        }  
+  
+        private void OnStopped()  
+        {  
+            logger.LogInformation("OnStopped method called.");
         }  
   
   
