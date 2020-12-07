@@ -68,6 +68,7 @@ namespace handle_sigterm_smaple
             string[] lines = {"Process stopped."};
             
             System.IO.File.WriteAllLines(filePath,lines);
+            logger.LogInformation($"File '{filePath}' created."); 
         }  
   
   
